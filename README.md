@@ -1,60 +1,41 @@
 # SortingService
 
-**SortingService** - это приложение на Python, 
+## Описание
+
+**SortingService** - это веб-приложение, разработанное на фреймворке Django, позволяющее сортировать словари с помощью автоподгружаемых модулей. В качестве клиента можно использовать любую технологию, которая может отправлять HTTP-запросы. Этот веб-сервис является идеальным решением для динамической сортировки данных с возможностью расширения и модификации алгоритмов сортировки.
 
 ## Установка
 
+Следуйте этим шагам для установки и запуска проекта на вашем локальном компьютере:
 
-1. Установите Python версии 3.8 или выше на вашем компьютере.
-2. Клонируйте репозиторий SortingService
-3. Перейдите в папку проекта:
-```bash
-cd SortingService
-```
+### Предварительные требования
 
-4. Установите необходимые зависимости:
-```bash
-pip install -r requirements.txt
-```
+- Python 3.8 или выше
 
-## Запуск сервера
+### Шаги установки
+
+1. **Клонирование репозитория**
+
+    ```bash
+    git clone https://github.com/alexromantsov/SortingService.git
+    ```
+
+2. **Переход в директорию проекта**
+
+    ```bash
+    cd SortingService
+    ```
+
+3. **Установка зависимостей**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Запуск проекта
+
+### Запуск сервера
+
 ```bash
 python manage.py runserver
-```
-
-## Запуск автотестов
-```bash
-python manage.py test
-```
-
-
-### Создание requirements.txt
-
-```bash
-pip freeze > requirements.txt
-```
-
-### Выполнения миграций 
-```bash
-python manage.py makemigrations
-```
-```bash
-python manage.py migrate
-```
-
-
-### Собрать все статические файлы
-```bash
-python manage.py collectstatic
-```
-
-
-### Создаем пользователей
-```bash
-python manage.py initialize_users
-```
-
-### Заполняем Базу данных данными
-```bash
-python manage.py filldata
 ```
