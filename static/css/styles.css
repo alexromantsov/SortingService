@@ -1,0 +1,24 @@
+/* static/css/styles.css */
+
+/* Отображение хедера и футера */
+.main {
+  min-height: calc(100vh - 230px); /* 230px - высота хедера и футера в сумме */
+}
+
+/* Чтобы можно было изменять размер модального окна */
+.resizable {
+  resize: both;
+  overflow: auto;
+}
+
+#customFileButton {
+  cursor: pointer;
+}
+
+.custom-button {
+  margin: 0 10px;  /* Горизонтальные отступы слева и справа */
+}
+
+#selectedFileName {
+  font-weight: bold;
+}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Методы и Функции
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h1 class="display-4">Список методов и функций</h1>
+  <p class="lead">На этой странице представлены все доступные пользовательские методы и функции.</p>
+</div>
+
+<!-- Таблица -->
+<table class="table table-hover" style="width: 100%;">
+  <thead>
+    <tr style="text-align: center;">
+      <th scope="col" style="width: 15%;">Модуль</th>
+      <th scope="col" style="width: 15%;">Функция</th>
+      <th scope="col" style="width: 10%;">Код</th>
+      <th scope="col" style="width: 60%;">Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in custom_modules %}
+    <tr style="text-align: center;">
+      <td>{{ item.module_name }}</td>
+      <td>{{ item.function_name }}</td>
+      <td><button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#codeModal{{ forloop.counter }}">Показать</button></td>
+      <td>
+        <div>{{ item.description }}</div>
+      </td>
+    </tr>
+
+    <!-- Code Modal -->
+    <div class="modal fade" id="codeModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="codeModalLabel{{ forloop.counter }}" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content resizable">
+          <div class="modal-header">
+            <h5 class="modal-title" id="codeModalLabel{{ forloop.counter }}">Код функции {{ item.function_name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <pre><code class="language-python">{{ item.code }}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!-- templates/includes/base.html -->
+{% load static %}
+
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="{% url 'frontend:index' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2"
+             width="40"
+             height="32"
+        >
+          <image width="50"
+                 height="50"
+                 xlink:href="{% static 'img/sorting_logo.png' %}">
+          </image>
+        </svg>
+        <span class="fs-4">Sorting Service</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        {% with request.resolver_match.view_name as view_name %}
+          <li class="nav-item">
+            <a href="{% url 'frontend:index' %}"
+               class="nav-link {% if view_name  == 'frontend:index' %}active{% endif %}"
+          >Главная
+          </a></li>
+
+          <li class="nav-item">
+            <a  href="{% url 'frontend:functions' %}"
+                class="nav-link {% if view_name  == 'frontend:functions' %}active{% endif %}"
+          >Функции
+          </a></li>
+
+        {% endwith %}
+      </ul>
+    </header>
+</div>

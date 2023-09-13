@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Главная
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h1 class="display-4">Добро пожаловать!</h1>
+  <p class="lead">На этом веб-сервере вы можете вызывать динамически загружаемые модули и функции.</p>
+</div>
+
+<!-- Кнопка для загрузки JSON-файла -->
+<div class="text-center mt-5">
+  <input type="file" id="jsonFileInput" style="display: none;">
+  <button id="customFileButton" class="btn btn-secondary custom-button">Выберите файл</button>
+  <button id="sendJson" class="btn btn-primary custom-button">Отправить JSON</button>
+  <div id="selectedFileName" class="mt-2"></div>
+</div>
+
+
+<!-- Модальное окно для вывода ответа сервера -->
+<div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="responseModalLabel">Ответ сервера</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre id="responseBody"></pre>  <!-- Здесь будет ответ сервера -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block extra_js %}
+  <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+
+{% endblock %}
+
+
