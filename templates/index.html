@@ -7,8 +7,8 @@
 
 {% block content %}
 <div class="text-center">
-  <h1 class="display-4">Добро пожаловать!</h1>
-  <p class="lead">На этом веб-сервере вы можете вызывать динамически загружаемые модули и функции.</p>
+  <h1 class="display-4">Sorting Service</h1>
+  <p class="lead">На этом веб-сервере вы можете загрузить json и обработать его согласно указанным настройкам.</p>
 </div>
 
 <!-- Кнопка для загрузки JSON-файла -->
@@ -18,6 +18,17 @@
   <button id="sendJson" class="btn btn-primary custom-button">Отправить JSON</button>
   <div id="selectedFileName" class="mt-2"></div>
 </div>
+
+<!-- Описание ожидаемого JSON-файла -->
+<div class="text-center mt-5">
+  <h3>Описание формата JSON:</h3>
+  <p>Файл должен содержать следующие поля:</p>
+  <strong>module</strong> - Название модуля, который будет использован для обработки данных.<br>
+  <strong>function</strong> - Название функции в указанном модуле, которая будет вызвана для обработки данных.<br>
+  <strong>data</strong> - Объект, содержащий данные для обработки.<br>
+
+</div>
+
 
 
 <!-- Модальное окно для вывода ответа сервера -->
@@ -40,5 +51,3 @@
 {% endblock %}
 
 {% endblock %}
-
-
